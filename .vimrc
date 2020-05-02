@@ -1,14 +1,13 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
+Plug 'preservim/nerdcommenter'
 
 call plug#end()
 
 " Gruvbox
 set background=dark
-let g:gruvbox_italicize_comments=1
 let g:gruvbox_contrast_dark='medium'
-let g:gruvbox_invert_selection=1
 colorscheme gruvbox
 
 " Vanilla vim
@@ -27,19 +26,24 @@ set cursorcolumn
 set wildmenu
 set lazyredraw
 set showmatch
+set scrolloff=10
+set laststatus=2
 
 " Search
 
 set incsearch
 set hlsearch
-nnoremap <leader><space> :nohlsearch<CR>
 
 " Key Combos
 
 let mapleader=","
 
+nnoremap <leader><esc> :nohlsearch<CR>
 nnoremap <leader>s :mksession!<CR>
 nnoremap <leader>q :tabp<CR>
 nnoremap <leader>e :tabn<CR>
 nnoremap <leader>d :vsplit<CR>
-nnoremap <leader><S-d> :split<CR>
+nnoremap <leader><S-d> :split<CR> 
+nnoremap <leader>/ :call NERDComment(0,"toggle")<CR>
+vnoremap <leader>/ :call NERDComment(0,"toggle")<CR>
+
