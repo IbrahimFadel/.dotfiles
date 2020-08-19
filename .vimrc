@@ -1,14 +1,23 @@
+"if empty(glob('~/.vim/autoload/plug.vim'))
+  "silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    "\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  "autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+"endif
+
 call plug#begin('~/.vim/plugged')
 
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdcommenter'
+Plug 'dylanaraps/wal.vim'
 
 call plug#end()
 
+
 " Gruvbox
-set background=dark
-let g:gruvbox_contrast_dark='medium'
-colorscheme gruvbox
+"set background=dark
+"let g:gruvbox_contrast_dark='medium'
+"colorscheme gruvbox
+ colorscheme wal
 
 " Vanilla vim
 syntax enable
@@ -21,8 +30,8 @@ filetype indent on
 
 set number
 set showcmd
-set cursorline
-set cursorcolumn
+"set cursorline
+"set cursorcolumn
 set wildmenu
 set lazyredraw
 set showmatch
@@ -34,7 +43,7 @@ set laststatus=2
 set incsearch
 set hlsearch
 
-" Key Combos
+ " Key Combos
 
 let mapleader=","
 
@@ -46,4 +55,3 @@ nnoremap <leader>d :vsplit<CR>
 nnoremap <leader><S-d> :split<CR> 
 nnoremap <leader>/ :call NERDComment(0,"toggle")<CR>
 vnoremap <leader>/ :call NERDComment(0,"toggle")<CR>
-

@@ -13,7 +13,7 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+#font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -41,23 +41,24 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole 
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec konsole
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -theme example
+#bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -181,44 +182,53 @@ bindsym $mod+r mode "resize"
 #}
 
 
-
-
-################### MY STUFF ############################
-
+#############################################################################################################3
 
 gaps inner 20
-gaps outer 40
-gaps bottom 107
+gaps outer 80
 
-#for_window [class="^.*"] border pixel 0
-#new_window 1pixel
+for_window [class="^.*"] border pixel 7
 
-default_border pixel 10 
+exec feh --bg-fill ~/Pictures/wallpaper2.jpg
 
-border_radius 0 
+bindsym $mod+d exec rofi -show run
 
-client.focused  #a89984 #a89984 #a89984 #a89984 #a89984 #a89984
-client.focused_inactive #a89984 #a89984 #a89984 #a89984 #a89984 #a89984
-client.unfocused #a89984 #a89984 #a89984 #a89984 #a89984 #a89984
-#client.focused #354d9b #354d9b #a89984 #354d9b #354d9b #354d9b
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
 
-#client.focused_inactive #280137 #a89984 #280137 #280137 #280137 #280137
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
 
-#client.unfocused #280137 #280137 #a89984 #280137 #280137 #280137
+client.background       $bg
 
-#exec_always compton --config ~/.config/compton/compton.conf
-#exec --no-startup-id compton -CG --unredir-if-possible --config ~/.config/compton/compton.conf
+bindsym $mod+plus exec amixer sset Master 5%+
+bindsym $mod+minus exec amixer sset Master 5%-
 
-#exec feh --bg-fill ~/.lightdm/space-1.jpg
-exec feh --bg-fill ~/.lightdm/bg2.jpg
+#bindsym $mod+p exec "i3-msg move workspace to output right"
+exec_always xrandr --output HDMI-1 --auto --right-of DVI-I-1
 
-bindsym $mod+plus exec amixer set Master 10%+
-bindsym $mod+minus exec amixer set Master 10%-
+bindsym $mod+Shift+p exec "i3-msg move workspace to output right"
+bindsym $mod+Shift+o exec "i3-msg move workspace to output left"
 
-bindsym $mod+Tab exec spectacle
+#bindsym $mod+p exec move workspace to output right
+#bindsym $mod+o exec move workspace to output left
 
-exec_always dunst
+bindsym $mod+c exec --no-startup-id "rofi -show calc -modi calc -no-show-match -no-sort > /dev/null"
 
-exec_always sh ~/.config/polybar/launch.sh
+######## SPOTIFY ########
 
-bindsym $mod+Shift+x exec betterlockscreen -l dim -t "Ibrahim Fadel"
+bindsym $mod+o exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+bindsym $mod+p exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+
+bindsym $mod+l exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+
+#########################
+
+for_window [class="Spotify Client"] floating enable
+for_window [class="Spotify Client"] border pixel 5
+
+exec dunst

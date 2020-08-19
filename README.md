@@ -1,2 +1,3 @@
 # dotfiles
-My dotfiles for my Manjaro setup
+
+A backup for my config

@@ -1,0 +1,19 @@
+abbr cl "clear"
+abbr .. "cd .."
+abbr ls "exa"
+abbr cat "bat"
+abbr pac "sudo pacman -S"
+
+abbr dev "cd ~/devdir"
+abbr p "python3"
+abbr p2 "python2"
+abbr server "python3 -m http.server"
+
+abbr vimtex "vim --servername VIM"
+
+abbr gs "hub status"
+abbr ga "hub add"
+abbr gc "hub commit"
+abbr gp "hub push"
+abbr gpl "hub pull"
+abbr gcl "hub clone"
