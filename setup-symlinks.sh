@@ -12,3 +12,5 @@ ln -vsf $DOTS/.Xresources $HOME/.Xresources
 ln -vsf $DOTS/dunstrc $CONFIG/dunst/dunstrc
 ln -vsf $DOTS/neofetch-config.conf $CONFIG/neofetch/config.conf
 ln -vsf $DOTS/rofi-ayu-mirage.rasi $CONFIG/rofi/ayu-mirage.rasi
+
+sudo ln -vsf $DOTS/bin/* /usr/bin/
