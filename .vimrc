@@ -1,23 +1,15 @@
-"if empty(glob('~/.vim/autoload/plug.vim'))
-  "silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    "\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  "autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-"endif
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 call plug#begin('~/.vim/plugged')
 
-"Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdcommenter'
-Plug 'dylanaraps/wal.vim'
+Plug 'ayu-theme/ayu-vim'
 
 call plug#end()
-
-
-" Gruvbox
-"set background=dark
-"let g:gruvbox_contrast_dark='medium'
-"colorscheme gruvbox
- colorscheme wal
 
 " Vanilla vim
 syntax enable
@@ -43,7 +35,13 @@ set laststatus=2
 set incsearch
 set hlsearch
 
- " Key Combos
+" Theme
+
+set termguicolors
+let ayucolor="mirage"
+colorscheme ayu
+
+" Key Combos
 
 let mapleader=","
 

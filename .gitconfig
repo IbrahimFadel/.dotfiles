@@ -1,0 +1,8 @@
+[hub]
+	protocol = https
+[user]
+    email = ibrahim.m.fadel@gmail.com
+    name = IbrahimFadel
+    signingkey = 3EF0E3095C65EF2E
+[commit]
+	gpgsign = true

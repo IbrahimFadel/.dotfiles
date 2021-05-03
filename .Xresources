@@ -1,0 +1,84 @@
+! vim:ft=xdefaults:
+
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+xterm*termName: xterm-256color
+xterm*scaleHeight: 1.0
+xterm*geometry: 52x12
+xterm*internalBorder: 120
+xterm*borderWidth: 0
+
+xterm*utf8: true
+xterm*scrollBar: false
+xterm*cursorBlink: false
+xterm*selectToClipboard: true
+xterm*trimSelection: true
+xterm*renderFont: true
+xterm*wideChars: true
+xterm*visualBell: false
+
+xterm.vt100.translations: #override \n\
+    Shift Ctrl <KeyPress> v:insert-selection(CLIPBOARD) \n\
+    Shift Ctrl <KeyPress> c:select-set(CLIPBOARD)
+
+xterm*faceName: xft:JetBrains Mono:pixelsize=12:antialias=true
+xterm*faceNameDoublesize: xft:JetBrains Mono:pixelsize=12:antialias=true
+xterm*wideFont: xft:JetBrains Mono:pixelsize=12:antialias=true
+
+! Special
+
+*.foreground:   #bfbab0
+*.background:   #1f2430
+*.cursorColor:  #ffcc66
+
+! Black
+
+*.color0:       #1f2430
+*.color8:       #292b30
+
+! Red
+
+*.color1:       #ff3333
+*.color9:       #ff6666
+
+! Green
+
+*.color2:       #bae67e
+*.color10:      #cee6ac
+
+! Yellow
+
+*.color3:       #ffd580
+*.color11:      #ffe6b3
+
+! Blue
+
+*.color4:       #73d0ff
+*.color12:      #a6e1ff
+
+! Magenta
+
+*.color5:       #f28779
+*.color13:      #ffd6da
+
+! Cyan
+
+*.color6:       #95e6cb
+*.color14:      #ffffff
+
+! White
+
+*.color7:       #ffffff
+*.color15:      #ffffff
+
+
+! Bold, Italic, Underline
+
+*.colorBD:     #e6e1cf
+!*.colorIT:
+!*.colorUL:

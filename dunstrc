@@ -294,8 +294,8 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     #background = "#222222"
     #foreground = "#888888"
-	background = "#5d5f88"
-	foreground = "#f5cab8"
+ background = "#5d5f88"
+ foreground = "#fefefe"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
@@ -303,8 +303,8 @@
 [urgency_normal]
     #background = "#285577"
     #foreground = "#ffffff"
-	background = "#2c2440"
-	foreground = "#f5cab8"
+ background = "#474645"
+ foreground = "#fefefe"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
@@ -312,8 +312,8 @@
 [urgency_critical]
     #background = "#900000"
     #foreground = "#ffffff"
-	background = "#fd5e78"
-	foreground = "#000000"
+ background = "#474645"
+ foreground = "#101010"
     frame_color = "#ff0000"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
@@ -435,3 +435,4 @@
 #    set_stack_tag = "volume"
 #
 # vim: ft=cfg
+
