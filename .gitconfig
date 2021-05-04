@@ -2,7 +2,13 @@
 	protocol = https
 [user]
     email = ibrahim.m.fadel@gmail.com
-    name = IbrahimFadel
-    signingkey = 3EF0E3095C65EF2E
+    name = Ibrahim Fadel
+    signingkey = 5C65EF2E
+[gpg]
+	program = gpg
 [commit]
 	gpgsign = true
+[alias]
+	logs = log --show-signature
+[core]
+	editor = vim
