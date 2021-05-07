@@ -1,5 +1,5 @@
 [hub]
-	protocol = https
+	protocol = ssh
 [user]
     email = ibrahim.m.fadel@gmail.com
     name = Ibrahim Fadel
