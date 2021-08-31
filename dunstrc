@@ -391,9 +391,9 @@
 #    summary = "*"
 #    script = dunst_espeak.sh
 
-#[script-test]
+#[script-ibrahim]
 #    summary = "*script*"
-#    script = dunst_test.sh
+#    script = dunst_ibrahim.sh
 
 #[ignore]
 #    # This notification will not be displayed
